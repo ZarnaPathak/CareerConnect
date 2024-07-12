@@ -42,7 +42,7 @@
                                     <td><?php echo $result['email']; ?></td>
                                     <td><?php echo $result['degree']; ?></td>
                                     <td><a href="edit.php?id=<?php echo $result['id']; ?>"> <i class="fa fa-edit text-success"></i> </a> </td>
-                                    <td><a href=""> <i class="fa fa-trash text-danger"></i> </a> </td>
+                                    <td><a href="delete.php?id=<?php echo $result['id']; ?>"> <i class="fa fa-trash text-danger"></i> </a> </td>
                                 </tr>
                             </tbody>
                         <?php
