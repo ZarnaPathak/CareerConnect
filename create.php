@@ -19,24 +19,12 @@
       <input type="text" class="form-control" name="Name">
     </div>
     <div class="mb-3">
-      <label for="exampleInputEmail1" class="form-label" name="Email">Your Email address</label>
-      <input type="text" class="form-control">    
+      <label for="exampleInputEmail1" class="form-label">Your Email address</label>
+      <input type="text" class="form-control" name="email">    
     </div>
     <div class="mb-3">
-      <label for="exampleInputEmail1" class="form-label" name="Degree">Your Qualification Degree</label>
-      <input type="text" class="form-control">  
-    </div>
-    <div class="mb-3">
-      <label for="exampleInputEmail1" class="form-label" name="Mobile">Your Mobile Number</label>
-      <input type="text" class="form-control">  
-    </div>
-    <div class="mb-3">
-      <label for="exampleInputEmail1" class="form-label" name="Reference">Any Reference</label>
-      <input type="text" class="form-control">  
-    </div>
-    <div class="mb-3">
-      <label for="exampleInputEmail1" class="form-label" name="Language">Preffered Tech Language</label>
-      <input type="text" class="form-control">   
+      <label for="exampleInputEmail1" class="form-label">Your Qualification Degree</label>
+      <input type="text" class="form-control" name="degree">  
     </div>
     <input type="submit" class="btn btn-primary" name="submit" value="Submit"/>
   </form>
@@ -44,4 +32,32 @@
 </body>
 </html>
 
+<?php
 
+include 'db_connect.php';
+
+if(isset($_POST['submit'])){
+  $name = $_POST['Name'];
+  $Email = $_POST['email'];
+  $Degree = $_POST['degree'];
+
+  $insert_query = "insert into create_applicant(name, email, degree) values('$name', '$Email', '$Degree')";
+
+  $query = mysqli_query($con, $insert_query);
+
+  if($query){
+    ?>
+        <script>
+            alert("Data Inserted Succesfull...");
+        </script>
+<?php
+}
+else{
+?>
+        <script>
+            alert("Data Not Inserted..");
+        </script>
+<?php   
+}
+}
+?>
