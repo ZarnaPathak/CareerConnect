@@ -10,10 +10,13 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
+    <div class="container p-5 d-flex justify-content-center">
+        <h3 class="text-dark text-bg-light">Applicant's Data</h3>
+    </div>
     <div class="container p-3 d-flex justify-content-center">
         <div class="card w-75">
-            <div class="card-body">
-                <table class="table">
+            <div class="card-body bg-secondary border border-secondary rounded">
+                <table class="table table-bordered">
                     <thead>
                         <tr>
                             <th scope="col">ID</th>
@@ -38,8 +41,8 @@
                                     <td><?php echo $result['name']; ?></td>
                                     <td><?php echo $result['email']; ?></td>
                                     <td><?php echo $result['degree']; ?></td>
-                                    <td>&nbsp; <a href=""> <i class="fa fa-edit text-success"></i> </a> </td>
-                                    <td><a href=""> <i class="fa fa-trash text-danger" aria-hidden="true"></i> </a> </td>
+                                    <td><a href="edit.php?id=<?php echo $result['id']; ?>"> <i class="fa fa-edit text-success"></i> </a> </td>
+                                    <td><a href=""> <i class="fa fa-trash text-danger"></i> </a> </td>
                                 </tr>
                             </tbody>
                         <?php

@@ -10,9 +10,9 @@
 </head>
 <body>
 <div class="container p-3 d-flex justify-content-center">
-  <a href="" class="btn btn-dark">Show Data</a>
+  <a href="show.php" class="btn btn-dark">Show Data</a>
 </div>
-<div class="container p-5">
+<div class="container p-5 bg-light border border-secondary rounded">
   <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST">
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">Your Name</label>
